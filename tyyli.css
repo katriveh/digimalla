@@ -1,0 +1,437 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html,body {
+    font-family: 'Roboto', sans-serif;
+    color:#2F2E2C;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+}
+
+h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    text-align: center;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: clamp(18px, 2vw, 22px);
+    text-align: center;
+    font-weight: 500;
+}
+
+.primary-button {
+    background-color: #87927c;
+    color: #000;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 25px;   /* pyöristetyt kulmat */
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* HEADER */
+.header {
+    background-color: #faf6f6;
+    padding: 10px 30px;
+
+    /* logo vasemmalle, linkit oikealle */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logon muotoilu */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Navigaatio */
+.header nav {
+    display: flex;
+    gap: 25px; /* väli linkkien väliin */
+}
+
+/* Linkit */
+.header nav a {
+    text-decoration: none;
+    color: #2F2E2C;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Hover-efekti */
+.header nav a:hover {
+    opacity: 0.7;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;        
+    overflow: hidden;
+}
+
+/* Herokuva */
+.hero-image {
+    width: 100%;
+    height: 90vh;          /* hero korkeus */
+    object-fit: cover;     /* kuva täyttää alueen */
+    display: block;
+}
+
+/* Hero-kuvan overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Tekstin asettelu herokuvassa */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Pääotsikko */
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Alaotsikko */
+.hero-subtitle {
+    font-size: 22px;
+    margin: 20px 0 30px 0;
+}
+
+/* Lue lisää painike */
+.hero-button {
+    background-color: white;
+    color: #2F2E2C;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 25px;   /* pyöristetyt kulmat */
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Hover-efekti */
+.hero-button:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 500px) {
+    .hero-content {
+        left: 30%;
+        transform: translate(-35%, -50%);
+        text-align: center;
+    }
+}
+
+
+/* PALVELUT */
+
+.palvelut {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.palvelu-laatikot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.laatikko {
+    background: #faf6f6;
+    padding: 30px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pienkuva {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .palvelu-laatikot {
+        grid-template-columns: 1fr;
+    }
+
+    .laatikko {
+        padding: 25px 15px;
+    }
+}
+
+/* ESITTELY */
+.esittely {
+    padding: 40px;
+    width: 90%
+}
+
+.esittely p {
+    font-size: 18px;
+    text-align: center;
+}
+
+/*ARVOSTELUT*/
+.arvostelut {
+    display: flex;
+    justify-content: center;
+    background-color: #faf6f6;
+    gap: 80px;
+    padding: 40px; 
+}
+
+.kommentit {
+    max-width: 250px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 350;
+    text-align: center
+}
+
+.image-break {
+    height: 60vh;
+    background-image: url("Digimalla\ digiassari.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+
+    .arvostelut {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+/*PALVELUT SIVU*/
+
+.services {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+
+    display: grid;
+    gap: 10px;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Järjestys vaihtuu joka toisessa */
+.service.reverse {
+    direction: rtl;
+}
+
+.service.reverse p {
+    direction: ltr;
+}
+
+/* PALVELUKUVA */
+
+.service-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* pitää neliön */
+    object-fit: cover;      /* kuva rajautuu nätisti */
+    display: block;
+}
+
+.image-link {
+    position: relative;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.overlay span {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Ota yhteyttä osio */
+.otayhteytta {
+    display: flex;
+    flex-direction: column; /*h2 ja button allekkain*/
+    justify-content: center; /* keskelle vaakasuunnassa */
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/*OTA YHTETTTÄ SIVU*/
+.contact-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: clamp(16px, 2vw, 20px);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #999;
+    width: 100%;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #6f6956;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/*Tiimi-osio*/
+.info-cards-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Otsikko */
+.info-cards-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Korttien grid */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Kortti */
+.card {
+    text-align: center;
+}
+
+/* Kuva */
+.henkilosto {
+    width: 90%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .henkilosto {
+        width: 70%;
+    }
+
+}
+
+/* FOOTER */
+.footer {
+    background-color: #948b73;
+    padding: 25px 30px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* mobiilia varten */
+}
+
+/* Linkit */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #2F2E2C;
+    font-size: 16px;
+}
+
+/* Some-kuvakkeet */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social img {
+    height: 25px;
+    width: auto;
+    display: block;
+}
+
+/* Hover (kevyt efekti) */
+.footer a:hover {
+    opacity: 0.7;
+}
